@@ -1,0 +1,17 @@
+@use "../components/reset";
+@use "../components/global";
+@use "../components/left-column";
+@use "../components/middle-column";
+@use "../components/right-column";
+
+:root {
+  --font-size-13: 13px;
+  --font-size-15: 15px;
+  --font-size-16: 16px;
+  --font-size-26: 26px;
+  --font-weight-400: 400;
+  --color-font-title: #ec7160;
+  --color-font-Dark: #303030;
+  --color-font-Light: #898989;
+  --color-font-Delete: #d82700;
+}

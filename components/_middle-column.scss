@@ -1,0 +1,7 @@
+@import "./mixins";
+
+.middle-column {
+  padding: 40px 28px;
+  background-color: var(--color-font-Light);
+  min-height: 100vh;
+}

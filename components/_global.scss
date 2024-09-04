@@ -1,0 +1,9 @@
+@import "./mixins";
+
+.App {
+  @include font-style("Aclonica", var(--font-size-13));
+  @include display-flex(row, center, space-between);
+  max-width: 1140px;
+  margin: 0 auto;
+  border: 2px solid black;
+}
