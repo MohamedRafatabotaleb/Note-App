@@ -18,8 +18,44 @@
   </head>
   <body>
     <main class="App">
-      <div class="left-column">Left</div>
-      <div class="middle-column">Middle</div>
+      <div class="left-column">
+        <p class="left-column_title">Almdrasa-Notes</p>
+        <div class="left-column_search-box">
+          <button type="submit">
+            <img src="assets/Search_icon.svg" alt="Search Icon" />
+          </button>
+          <input type="text" placeholder="Search..." />
+        </div>
+        <div class="left-column_Add-notes">
+          <p class="left-column_Add-notes_title">Notes</p>
+          <button class="AddNotes-button">Add Notes</button>
+        </div>
+      </div>
+      <div class="middle-column">
+        <div class="middle-column_pinned">
+          <p class="middle-column_pinned_title">PINNED</p>
+          <ul class="pinned_list">
+            <li class="pinned_list_taskContent">
+              <p class="pinned_list_taskContent_title">
+                Light & Bright in Brooklyn
+              </p>
+              <p class="pinned_list_taskContent_content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at
+                arcu dui.
+              </p>
+              <div class="pinned_list_footer">
+                <p class="pinned_list_taskContent_date">Feb 8, 2021</p>
+                <button class="pinned_list_taskContent_buttonDelete">
+                  Delete
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="middle-column_notes">
+          <ul class="notes_list"></ul>
+        </div>
+      </div>
       <div class="right-column">Right</div>
     </main>
     <script src="./scripts/index.js" type="module"></script>

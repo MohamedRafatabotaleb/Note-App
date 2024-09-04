@@ -54,24 +54,153 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   max-width: 1140px;
   margin: 0 auto;
-  border: 2px solid black;
+  font-weight: var(--font-weight-400);
 }
 
 .left-column {
   padding: 40px 25px;
-  background-color: var(--color-font-Light);
+  background-color: var(--color-background-Light);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-startn;
+  border-right: 2px solid var(--color-Line-LightGray);
+  max-width: 258px;
+}
+.left-column_title {
+  font-size: var(--font-size-15);
+  color: var(--color-font-title);
+  margin-bottom: 57px;
 }
 
+/* Search Box */
+.left-column_search-box {
+  display: flex;
+  align-items: center;
+  width: 210px;
+  height: 34px;
+  border-radius: 7px;
+  padding: 0 8px;
+  background-color: #fff;
+  margin-bottom: 35px;
+}
+
+.left-column_search-box input[type=text] {
+  border: none;
+  outline: none;
+  font-family: "Inter";
+  font-size: var(--font-size-13);
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+}
+
+.left-column_search-box input[type=text]::-moz-placeholder {
+  color: #aaa;
+}
+
+.left-column_search-box input[type=text]::placeholder {
+  color: #aaa;
+}
+
+.left-column_search-box button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.left-column_search-box button img {
+  width: 18px;
+  height: 18px;
+}
+
+/* End Search Box */
+/* Add Notes*/
+.left-column_Add-notes {
+  font-family: "Inter";
+  font-size: var(--font-size-16);
+}
+
+.left-column_Add-notes_title {
+  position: relative;
+  padding-left: 10px;
+}
+
+.left-column_Add-notes_title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 3px;
+  background-color: var(--color-font-title);
+}
+
+.AddNotes-button {
+  padding: 10px 0 0 10px;
+  color: var(--color-Light-Gray);
+}
+
+/* End Add Notes*/
 .middle-column {
   padding: 40px 28px;
   background-color: var(--color-font-Light);
   min-height: 100vh;
+  width: 322px;
+  font-family: "Inter";
+  font-size: var(--font-size-13);
+  border-right: 2px solid var(--color-Line-LightGray);
 }
 
+/* Pinned */
+.pinned_list_taskContent {
+  margin-bottom: 25px;
+}
+
+.middle-column_pinned_title {
+  color: var(--color-font-title);
+  margin-bottom: 16px;
+}
+
+.pinned_list_taskContent_title {
+  font-size: var(--font-size-16);
+  color: var(--color-font-Dark);
+  margin-bottom: 6px;
+}
+
+.pinned_list_taskContent_content {
+  font-size: var(--font-size-13);
+  color: var(--color-Light-Gray);
+  margin-bottom: 20px;
+}
+
+.pinned_list_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pinned_list_taskContent_date {
+  margin: 0;
+  color: var(--color-Light-Gray);
+}
+
+.pinned_list_taskContent_buttonDelete {
+  margin: 0;
+  color: var(--color-font-Delete);
+}
+
+/* End Pinned */
 .right-column {
   padding: 114px 153px 114px 100px;
   background-color: var(--color-font-Light);
@@ -86,6 +215,8 @@ a {
   --font-weight-400: 400;
   --color-font-title: #ec7160;
   --color-font-Dark: #303030;
-  --color-font-Light: #898989;
+  --color-Light-Gray: #898989;
   --color-font-Delete: #d82700;
-}/*# sourceMappingURL=styles.css.map */
+  --color-background-Light: #f6f6f6;
+  --color-Line-LightGray: #e7e7e9;
+}

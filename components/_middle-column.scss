@@ -4,4 +4,49 @@
   padding: 40px 28px;
   background-color: var(--color-font-Light);
   min-height: 100vh;
+  width: 322px;
+  @include font-style("Inter", var(--font-size-13));
+  border-right: 2px solid var(--color-Line-LightGray);
 }
+
+/* Pinned */
+
+.pinned_list_taskContent {
+  margin-bottom: 25px;
+}
+
+.middle-column_pinned_title {
+  color: var(--color-font-title);
+  margin-bottom: 16px;
+}
+
+.pinned_list_taskContent_title {
+  font-size: var(--font-size-16);
+  color: var(--color-font-Dark);
+  margin-bottom: 6px;
+}
+
+.pinned_list_taskContent_content {
+  font-size: var(--font-size-13);
+  color: var(--color-Light-Gray);
+  margin-bottom: 20px;
+}
+
+.pinned_list_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pinned_list_taskContent_date {
+  margin: 0;
+  color: var(--color-Light-Gray);
+}
+
+.pinned_list_taskContent_buttonDelete {
+  margin: 0;
+  color: var(--color-font-Delete);
+}
+
+/* End Pinned */

@@ -2,6 +2,87 @@
 
 .left-column {
   padding: 40px 25px;
-  background-color: var(--color-font-Light);
+  background-color: var(--color-background-Light);
   min-height: 100vh;
+  @include display-flex(column, flex-start, flex-startn);
+  border-right: 2px solid var(--color-Line-LightGray);
+  max-width: 258px;
+
+  &_title {
+    font-size: var(--font-size-15);
+    color: var(--color-font-title);
+    margin-bottom: 57px;
+  }
 }
+
+/* Search Box */
+
+.left-column_search-box {
+  display: flex;
+  align-items: center;
+  width: 210px;
+  height: 34px;
+  border-radius: 7px;
+  padding: 0 8px;
+  background-color: #fff;
+  margin-bottom: 35px;
+}
+
+.left-column_search-box input[type="text"] {
+  border: none;
+  outline: none;
+  @include font-style("Inter", var(--font-size-13));
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+}
+
+.left-column_search-box input[type="text"]::placeholder {
+  color: #aaa;
+}
+
+.left-column_search-box button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.left-column_search-box button img {
+  width: 18px;
+  height: 18px;
+}
+
+/* End Search Box */
+
+/* Add Notes*/
+
+.left-column_Add-notes {
+  @include font-style("Inter", var(--font-size-16));
+}
+
+.left-column_Add-notes_title {
+  position: relative;
+  padding-left: 10px;
+}
+
+.left-column_Add-notes_title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 3px;
+  background-color: var(--color-font-title);
+}
+
+.AddNotes-button {
+  padding: 10px 0 0 10px;
+  color: var(--color-Light-Gray);
+}
+
+/* End Add Notes*/
