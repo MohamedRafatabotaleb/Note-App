@@ -2,6 +2,74 @@
 
 .right-column {
   padding: 114px 153px 114px 100px;
-  background-color: var(--color-font-Light);
-  min-height: 100vh;
+  background-color: #d6d6d6;
+  @include font-style("Inter", var(--font-size-13));
+  width: 850px;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
 }
+
+.right-column_title {
+  font-size: var(--font-size-26);
+  margin-bottom: 10px;
+}
+
+.right-column_author_date {
+  display: flex;
+  gap: 5px;
+  color: var(--color-Light-Gray);
+  margin-bottom: 40px;
+}
+
+.right-column_content {
+  font-size: var(--font-size-16);
+  line-height: 27px;
+}
+
+/* circle add */
+
+.circle-add {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: var(--color-font-title);
+  box-shadow: 0px 9px 25px 0px rgba(236, 113, 96, 0.7);
+  left: 730px;
+  bottom: 100px;
+  position: absolute;
+  transition: transform 0.3s ease-in-out;
+}
+
+.circle-add::before,
+.circle-add::after {
+  content: "";
+  position: absolute;
+  background-color: var(--color-background-Light);
+  transition: transform 0.3s ease-in-out;
+}
+
+.circle-add::before {
+  width: 35px;
+  height: 3px;
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+}
+
+.circle-add::after {
+  width: 3px;
+  height: 35px;
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+}
+
+.circle-add:hover {
+  transform: scale(1.03);
+}
+
+.circle-add:hover::before,
+.circle-add:hover::after {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+/* End circle add */

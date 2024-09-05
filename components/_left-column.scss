@@ -2,11 +2,11 @@
 
 .left-column {
   padding: 40px 25px;
-  background-color: var(--color-background-Light);
+  background-color: var(--color-Line-LightGray);
   min-height: 100vh;
-  @include display-flex(column, flex-start, flex-startn);
-  border-right: 2px solid var(--color-Line-LightGray);
   max-width: 258px;
+
+  border-right: 2px solid var(--color-Line-LightGray);
 
   &_title {
     font-size: var(--font-size-15);

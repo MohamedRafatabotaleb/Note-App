@@ -2,9 +2,11 @@
 
 .App {
   @include font-style("Aclonica", var(--font-size-13));
-  @include display-flex(row, center, flex-start);
-  max-width: 1140px;
+  @include display-flex(row, flex-start, flex-start);
+  max-width: 1440px;
+  height: 100vh;
   margin: 0 auto;
 
   font-weight: var(--font-weight-400);
+  box-sizing: border-box;
 }

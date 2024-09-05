@@ -53,23 +53,21 @@ a {
   font-size: var(--font-size-13);
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
-  max-width: 1140px;
+  max-width: 1440px;
+  height: 100vh;
   margin: 0 auto;
   font-weight: var(--font-weight-400);
+  box-sizing: border-box;
 }
 
 .left-column {
   padding: 40px 25px;
-  background-color: var(--color-background-Light);
+  background-color: var(--color-Line-LightGray);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-startn;
-  border-right: 2px solid var(--color-Line-LightGray);
   max-width: 258px;
+  border-right: 2px solid var(--color-Line-LightGray);
 }
 .left-column_title {
   font-size: var(--font-size-15);
@@ -152,7 +150,7 @@ a {
 
 /* End Add Notes*/
 .middle-column {
-  padding: 40px 28px;
+  padding: 50px 28px;
   background-color: var(--color-font-Light);
   min-height: 100vh;
   width: 322px;
@@ -162,7 +160,7 @@ a {
 }
 
 /* Pinned */
-.pinned_list_taskContent {
+.taskContent {
   margin-bottom: 25px;
 }
 
@@ -171,42 +169,146 @@ a {
   margin-bottom: 16px;
 }
 
-.pinned_list_taskContent_title {
+.taskContent_title {
   font-size: var(--font-size-16);
   color: var(--color-font-Dark);
   margin-bottom: 6px;
 }
 
-.pinned_list_taskContent_content {
+.taskContent_content {
   font-size: var(--font-size-13);
   color: var(--color-Light-Gray);
   margin-bottom: 20px;
 }
 
-.pinned_list_footer {
+.taskContent_footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.pinned_list_taskContent_date {
+.taskContent_date {
   margin: 0;
   color: var(--color-Light-Gray);
 }
 
-.pinned_list_taskContent_buttonDelete {
+.taskContent_buttonDelete {
   margin: 0;
   color: var(--color-font-Delete);
 }
 
 /* End Pinned */
-.right-column {
-  padding: 114px 153px 114px 100px;
-  background-color: var(--color-font-Light);
-  min-height: 100vh;
+/* Notes */
+.middle-column_notes {
+  position: relative;
 }
 
+.middle-column_notes_title {
+  position: relative;
+  color: var(--color-font-title);
+  margin-bottom: 25px;
+  padding: 10px 0;
+  text-align: left;
+}
+
+.middle-column_notes_title::before,
+.middle-column_notes_title::after {
+  content: "";
+  position: absolute;
+  left: -28px;
+  right: -28px;
+  height: 1px;
+  background-color: var(--color-Line-LightGray);
+}
+
+.middle-column_notes_title::before {
+  top: 0;
+}
+
+.middle-column_notes_title::after {
+  bottom: 0;
+}
+
+/* End Notes */
+.middle-column {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.right-column {
+  padding: 114px 153px 114px 100px;
+  background-color: #d6d6d6;
+  font-family: "Inter";
+  font-size: var(--font-size-13);
+  width: 850px;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.right-column_title {
+  font-size: var(--font-size-26);
+  margin-bottom: 10px;
+}
+
+.right-column_author_date {
+  display: flex;
+  gap: 5px;
+  color: var(--color-Light-Gray);
+  margin-bottom: 40px;
+}
+
+.right-column_content {
+  font-size: var(--font-size-16);
+  line-height: 27px;
+}
+
+/* circle add */
+.circle-add {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: var(--color-font-title);
+  box-shadow: 0px 9px 25px 0px rgba(236, 113, 96, 0.7);
+  left: 730px;
+  bottom: 100px;
+  position: absolute;
+  transition: transform 0.3s ease-in-out;
+}
+
+.circle-add::before,
+.circle-add::after {
+  content: "";
+  position: absolute;
+  background-color: var(--color-background-Light);
+  transition: transform 0.3s ease-in-out;
+}
+
+.circle-add::before {
+  width: 35px;
+  height: 3px;
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+}
+
+.circle-add::after {
+  width: 3px;
+  height: 35px;
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+}
+
+.circle-add:hover {
+  transform: scale(1.03);
+}
+
+.circle-add:hover::before,
+.circle-add:hover::after {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+/* End circle add */
 :root {
   --font-size-13: 13px;
   --font-size-15: 15px;

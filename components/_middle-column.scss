@@ -1,7 +1,7 @@
 @import "./mixins";
 
 .middle-column {
-  padding: 40px 28px;
+  padding: 50px 28px;
   background-color: var(--color-font-Light);
   min-height: 100vh;
   width: 322px;
@@ -11,7 +11,7 @@
 
 /* Pinned */
 
-.pinned_list_taskContent {
+.taskContent {
   margin-bottom: 25px;
 }
 
@@ -20,33 +20,72 @@
   margin-bottom: 16px;
 }
 
-.pinned_list_taskContent_title {
+.taskContent_title {
   font-size: var(--font-size-16);
   color: var(--color-font-Dark);
   margin-bottom: 6px;
 }
 
-.pinned_list_taskContent_content {
+.taskContent_content {
   font-size: var(--font-size-13);
   color: var(--color-Light-Gray);
   margin-bottom: 20px;
 }
 
-.pinned_list_footer {
+.taskContent_footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.pinned_list_taskContent_date {
+.taskContent_date {
   margin: 0;
   color: var(--color-Light-Gray);
 }
 
-.pinned_list_taskContent_buttonDelete {
+.taskContent_buttonDelete {
   margin: 0;
   color: var(--color-font-Delete);
 }
 
 /* End Pinned */
+
+/* Notes */
+
+.middle-column_notes {
+  position: relative;
+}
+
+.middle-column_notes_title {
+  position: relative;
+  color: var(--color-font-title);
+  margin-bottom: 25px;
+  padding: 10px 0;
+  text-align: left;
+}
+
+.middle-column_notes_title::before,
+.middle-column_notes_title::after {
+  content: "";
+  position: absolute;
+  left: -28px;
+  right: -28px;
+  height: 1px;
+  background-color: var(--color-Line-LightGray);
+}
+
+.middle-column_notes_title::before {
+  top: 0;
+}
+
+.middle-column_notes_title::after {
+  bottom: 0;
+}
+
+/* End Notes */
+
+.middle-column {
+  height: 100vh;
+  overflow-y: auto;
+}
