@@ -1,13 +1,28 @@
 @import "./mixins";
 
 .right-column {
-  padding: 114px 153px 114px 100px;
-  background-color: #d6d6d6;
+  padding: 114px 4vw 10px 4vw;
+  background-color: var(--color-background-White);
   @include font-style("Inter", var(--font-size-13));
   width: 850px;
   height: 100vh;
   overflow-y: auto;
   position: relative;
+  transition: 0.5s ease-in-out;
+
+  @media (min-width: 650px) and (max-width: 940px) {
+    display: inline-block;
+    width: 100%;
+    padding-top: 0px;
+    margin-top: 95px;
+  }
+
+  @media (max-width: 650px) {
+    display: none;
+    width: 100%;
+    padding-top: 0px;
+    margin-top: 95px;
+  }
 }
 
 .right-column_title {
@@ -25,6 +40,10 @@
 .right-column_content {
   font-size: var(--font-size-16);
   line-height: 27px;
+
+  overflow-wrap: break-word; /* Break long words to keep them within the container */
+  word-wrap: break-word; /* For older browser support */
+  overflow: hidden; /* Hide any text that overflows the container */
 }
 
 /* circle add */
@@ -35,10 +54,16 @@
   border-radius: 50%;
   background-color: var(--color-font-title);
   box-shadow: 0px 9px 25px 0px rgba(236, 113, 96, 0.7);
-  left: 730px;
   bottom: 100px;
+  right: 0;
+  margin-right: 60px;
   position: absolute;
   transition: transform 0.3s ease-in-out;
+  z-index: 10;
+
+  @media (max-width: 940px) {
+    display: none;
+  }
 }
 
 .circle-add::before,
@@ -73,3 +98,10 @@
 }
 
 /* End circle add */
+
+.EmptyList {
+  filter: grayscale(1);
+  opacity: 0.5;
+  max-width: 100%; /* Ensures the image scales within the div */
+  max-height: 100%;
+}

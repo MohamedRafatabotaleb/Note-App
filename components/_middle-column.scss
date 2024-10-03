@@ -1,24 +1,88 @@
 @import "./mixins";
 
 .middle-column {
-  padding: 50px 28px;
-  background-color: var(--color-font-Light);
-  min-height: 100vh;
-  width: 322px;
+  padding: 30px 28px;
+  background-color: var(--color-background-White);
+  min-width: 322px;
+  max-width: 322px;
+  transition: 0.5s ease-in-out;
+
+  height: 100vh;
   @include font-style("Inter", var(--font-size-13));
   border-right: 2px solid var(--color-Line-LightGray);
+  overflow-y: auto;
+
+  @media (max-width: 940px) {
+    min-width: 122px;
+    width: 100%;
+    padding-top: 0px;
+    margin-top: 95px;
+
+    z-index: 0;
+  }
+
+  @media (max-width: 650px) {
+    max-width: 100%;
+  }
+}
+
+.middle_header {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.middle_header::before,
+.middle_header::after {
+  content: "";
+  position: absolute;
+  left: -28px;
+  right: -28px;
+  height: 2px;
+  background-color: var(--color-Line-LightGray);
+}
+
+.middle_header::before {
+  top: 0;
+}
+
+.middle_header::after {
+  bottom: 0;
+}
+
+.middle_title {
+  position: relative;
+  color: var(--color-font-title);
+  padding: 10px 0;
+  text-align: left;
 }
 
 /* Pinned */
 
-.taskContent {
-  margin-bottom: 25px;
+.middle-column_pinned {
+  position: relative;
 }
 
-.middle-column_pinned_title {
+.pinned_deleteAll {
   color: var(--color-font-title);
-  margin-bottom: 16px;
+  margin-left: auto;
 }
+
+/* End Pinned */
+
+/* Notes */
+
+.middle-column_notes {
+  position: relative;
+}
+
+.notes_deleteAll {
+  color: var(--color-font-title);
+  margin-left: auto;
+}
+
+/* End Notes */
+
+/* Tasks */
 
 .taskContent_title {
   font-size: var(--font-size-16);
@@ -26,10 +90,25 @@
   margin-bottom: 6px;
 }
 
+.taskContent {
+  margin-bottom: 25px;
+  cursor: pointer;
+
+  padding: 10px;
+}
+
 .taskContent_content {
   font-size: var(--font-size-13);
   color: var(--color-Light-Gray);
   margin-bottom: 20px;
+
+  overflow-wrap: break-word; /* Break long words to keep them within the container */
+  word-wrap: break-word; /* For older browser support */
+  overflow: hidden; /* Hide any text that overflows the container */
+
+  line-height: 1.5; /* Adjust based on your design */
+  max-height: calc(1.5em * 3); /* 3 lines * line-height */
+  text-overflow: ellipsis; /* Add ellipsis (...) for overflowing text */
 }
 
 .taskContent_footer {
@@ -49,43 +128,8 @@
   color: var(--color-font-Delete);
 }
 
-/* End Pinned */
-
-/* Notes */
-
-.middle-column_notes {
-  position: relative;
+.taskContent_author {
+  display: none;
 }
 
-.middle-column_notes_title {
-  position: relative;
-  color: var(--color-font-title);
-  margin-bottom: 25px;
-  padding: 10px 0;
-  text-align: left;
-}
-
-.middle-column_notes_title::before,
-.middle-column_notes_title::after {
-  content: "";
-  position: absolute;
-  left: -28px;
-  right: -28px;
-  height: 1px;
-  background-color: var(--color-Line-LightGray);
-}
-
-.middle-column_notes_title::before {
-  top: 0;
-}
-
-.middle-column_notes_title::after {
-  bottom: 0;
-}
-
-/* End Notes */
-
-.middle-column {
-  height: 100vh;
-  overflow-y: auto;
-}
+/* End Tasks */

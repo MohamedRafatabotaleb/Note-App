@@ -12,6 +12,20 @@
     font-size: var(--font-size-15);
     color: var(--color-font-title);
     margin-bottom: 57px;
+
+    @media (max-width: 940px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 940px) {
+    position: absolute;
+    transition: 0.5s ease-in-out;
+    left: 0;
+    transform: translateX(-200px);
+    min-width: 200px;
+    z-index: 2;
+    padding: 22px 25px;
   }
 }
 
@@ -26,6 +40,10 @@
   padding: 0 8px;
   background-color: #fff;
   margin-bottom: 35px;
+
+  @media (max-width: 940px) {
+    display: none;
+  }
 }
 
 .left-column_search-box input[type="text"] {
@@ -61,28 +79,90 @@
 /* Add Notes*/
 
 .left-column_Add-notes {
+  margin-bottom: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @include font-style("Inter", var(--font-size-16));
+
+  @media (max-width: 940px) {
+    margin-top: 40px;
+  }
+}
+
+.left-column_Add-notes button {
   @include font-style("Inter", var(--font-size-16));
 }
 
-.left-column_Add-notes_title {
-  position: relative;
+.notes-button {
   padding-left: 10px;
-}
-
-.left-column_Add-notes_title::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 20px;
-  width: 3px;
-  background-color: var(--color-font-title);
+  border-left: 3px solid var(--color-font-title);
 }
 
 .AddNotes-button {
-  padding: 10px 0 0 10px;
+  margin-top: 10px;
+  padding-left: 10px;
   color: var(--color-Light-Gray);
 }
 
+// .leftButton_Style::before {
+//   content: "";
+//   position: absolute;
+//   left: 0;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   height: 20px;
+//   width: 3px;
+//   background-color: var(--color-font-title);
+// }
+
 /* End Add Notes*/
+
+/* Search List */
+.search_list {
+  @include font-style("Inter", var(--font-size-16));
+}
+
+.taskContent_date {
+  @include font-style("Inter", var(--font-size-13));
+}
+
+/* End Search List */
+
+/* close-menu */
+
+@media (max-width: 940px) {
+  .close-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    position: relative;
+  }
+
+  .close-menu__bar {
+    width: 100%;
+    height: 1.6px;
+    background-color: var(--color-font-Dark);
+    transition: transform 0.3s ease;
+    position: absolute;
+    left: 0;
+  }
+
+  .close-menu__bar:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .close-menu__bar:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+
+/* End close-menu */

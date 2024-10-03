@@ -1,0 +1,86 @@
+@import "./mixins";
+
+.right-column-AddNotes {
+  padding: 114px 15vw 238px 15vw;
+  background-color: var(--color-background-White);
+
+  @include font-style("Inter", var(--font-size-26));
+  width: 1182px;
+  height: 100vh;
+  transition: 0.5s ease-in-out;
+  display: none;
+
+  &.deactive {
+    display: none;
+  }
+
+  @media (min-width: 650px) and (max-width: 940px) {
+    width: 100%;
+    padding: auto;
+
+    align-content: center;
+    margin: auto;
+  }
+
+  @media (max-width: 650px) {
+    // display: none;
+    width: 100%;
+    padding: 100px 16px 0px 16px;
+  }
+}
+
+.right-column-AddNotes label {
+  @include font-style("Inter", var(--font-size-13));
+  color: var(--color-Light-Gray);
+  margin-top: 40px;
+  margin-bottom: 6px;
+}
+
+.right-column-AddNotes form {
+  @include display-flex(column, flex-start, flex-start);
+}
+
+.right-column-AddNotes input {
+  width: 100%;
+  height: 45px;
+  background-color: var(--color-Line-LightGray);
+
+  border: none;
+  outline: none;
+
+  border-radius: 7px;
+  padding-left: 10px;
+}
+
+.right-column-AddNotes .AddNotes_note {
+  width: 100%;
+  height: 150px;
+  background-color: var(--color-Line-LightGray);
+  resize: none;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 7px;
+
+  font-family: "Inter";
+  margin-bottom: 50px;
+}
+
+.submitButton {
+  @media (max-width: 650px) {
+    width: 100%;
+    @include display-flex(row, flex-start, space-between);
+  }
+}
+
+.right-column-AddNotes button {
+  background-color: var(--color-font-title);
+  color: var(--color-background-White);
+  padding: 12px 22px;
+  @include font-style("Inter", var(--font-size-13));
+  border-radius: 7px;
+
+  @media (max-width: 650px) {
+    padding: 15px;
+  }
+}

@@ -3,6 +3,7 @@
 @use "../components/left-column";
 @use "../components/middle-column";
 @use "../components/right-column";
+@use "../components/right-column-AddNotes";
 
 :root {
   --font-size-13: 13px;
@@ -15,5 +16,7 @@
   --color-Light-Gray: #898989;
   --color-font-Delete: #d82700;
   --color-background-Light: #f6f6f6;
+  --color-background-White: #ffffff;
+
   --color-Line-LightGray: #e7e7e9;
 }
